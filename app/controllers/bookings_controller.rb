@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
   def edit
@@ -37,5 +38,11 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:title, :description, :price, :capacity) #capacity replaces beds + rooms
   end
 end
