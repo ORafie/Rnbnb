@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @flat = Flat.find(params[:flat_id])
   end
 
   def show
@@ -14,11 +15,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @flat = Flat.find(params[:flat_id])
+    @booking.user = current_user
+    @booking.flat = @flat
 
     if @booking.save
       redirect_to @booking, notice: 'Your booking was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,11 +42,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
-  end
-
-  private
-
-  def booking_params
-    params.require(:booking).permit(:title, :description, :price, :capacity) #capacity replaces beds + rooms
   end
 end
