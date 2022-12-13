@@ -1,9 +1,5 @@
-<%= simple_form_for(flat) do |f| %>
-  <%= f.input :flat_type %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :capacity %>
-  <%= f.input :rating %>
-  <%= f.input :price %>
+<%= simple_form_for [@flat, @booking] do |f| %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
   <%= f.submit %>
 <% end %>
