@@ -5,6 +5,8 @@
 # user = User.create!(email: "flats@yahoo.com", password: "password")
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Flat.destroy_all
+
 Flat.create!([{
   flat_type: "flat",
   title: "beatifull flat",
@@ -32,4 +34,5 @@ Flat.create!([{
   rating: 5.5,
   user_id: 2
 }])
-p "Created #{Flat.count} Flats"
+
+# p "Created #{Flat.count} Flats"
