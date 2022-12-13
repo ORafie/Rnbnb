@@ -24,11 +24,16 @@ class BookingsController < ApplicationController
   end
 
   def update
+    if @booking.update(booking_params)
+      redirect_to @booking, notice: 'Your booking was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:title, :description, :price, :capacity) #capacity replaces beds + rooms
+    params.require(:booking).permit(:start_date, :end_date) #capacity replaces beds + rooms
   end
 end
