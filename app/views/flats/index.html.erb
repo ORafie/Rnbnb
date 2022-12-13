@@ -1,0 +1,15 @@
+<h1>Welcome to RnBnb</h1>
+
+<ul class='list-group'>
+  <%= @flats.each do |flat|%>
+    <li class='list-group-item'>
+      <%= link_to flat.title, flat_path(flat) %>
+        <br>
+      <%= flat.rating %>
+        <br>
+      <%= flat.price %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-primary' %>
