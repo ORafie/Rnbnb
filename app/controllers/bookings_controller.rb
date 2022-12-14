@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update]
 
+  def user_bookings
+    @bookings = Booking.where(user_id: current_user)
+  end
+
   def new
     @booking = Booking.new
     @flat = Flat.find(params[:flat_id])
