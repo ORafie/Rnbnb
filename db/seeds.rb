@@ -9,9 +9,9 @@ Flat.destroy_all
 
 Flat.create!([{
   flat_type: "flat",
-  title: "beatifull flat",
+  title: "beautiful Flat",
   price: "100",
-  description: "some words",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 3,
   rating: 9.5,
   user_id: 2,
@@ -19,9 +19,9 @@ Flat.create!([{
 },
 {
   flat_type: "house",
-  title: "big house",
+  title: "Beach Side Mansion",
   price: "1000",
-  description: "some words about the house",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 15,
   rating: 9.8,
   user_id: 2,
@@ -29,13 +29,13 @@ Flat.create!([{
 },
 {
   flat_type: "igloo",
-  title: "cold igloo",
+  title: "Cold Igloo",
   price: "10",
-  description: "a word about igloo",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 2,
   rating: 5.5,
   user_id: 2,
   address: "Rue de Geneve 38, Lausanne"
 }])
 
-# p "Created #{Flat.count} Flats"
+p "Created #{Flat.count} Flats"
