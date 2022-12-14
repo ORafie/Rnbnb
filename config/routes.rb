@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:edit, :update, :show]
+
+  get '/user_bookings', to: 'bookings#user_bookings'
 end

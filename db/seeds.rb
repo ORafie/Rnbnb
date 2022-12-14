@@ -14,7 +14,8 @@ Flat.create!([{
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 3,
   rating: 9.5,
-  user_id: 2
+  user_id: 2,
+  address: "333 West 56th Street, New York City"
 },
 {
   flat_type: "house",
@@ -23,7 +24,8 @@ Flat.create!([{
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 15,
   rating: 9.8,
-  user_id: 2
+  user_id: 2,
+  address: "Avenida de Reforma 13, Mexico City"
 },
 {
   flat_type: "igloo",
@@ -32,7 +34,8 @@ Flat.create!([{
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   capacity: 2,
   rating: 5.5,
-  user_id: 2
+  user_id: 2,
+  address: "Rue de Geneve 38, Lausanne"
 }])
 
 p "Created #{Flat.count} Flats"
