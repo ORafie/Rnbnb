@@ -14,7 +14,8 @@ Flat.create!([{
   description: "some words",
   capacity: 3,
   rating: 9.5,
-  user_id: 2
+  user_id: 2,
+  address: "333 West 56th Street, New York City"
 },
 {
   flat_type: "house",
@@ -23,7 +24,8 @@ Flat.create!([{
   description: "some words about the house",
   capacity: 15,
   rating: 9.8,
-  user_id: 2
+  user_id: 2,
+  address: "Avenida de Reforma 13, Mexico City"
 },
 {
   flat_type: "igloo",
@@ -32,7 +34,8 @@ Flat.create!([{
   description: "a word about igloo",
   capacity: 2,
   rating: 5.5,
-  user_id: 2
+  user_id: 2,
+  address: "Rue de Geneve 38, Lausanne"
 }])
 
 # p "Created #{Flat.count} Flats"
