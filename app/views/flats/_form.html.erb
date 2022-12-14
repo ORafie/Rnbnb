@@ -1,9 +1,19 @@
+<div class=container>
 <%= simple_form_for(flat) do |f| %>
-  <%= f.input :flat_type %>
   <%= f.input :title %>
-  <%= f.input :description %>
+  <div class="row">
+  <div class="col">
+  <%= f.input :flat_type %>
+  </div>
+  <div class="col">
   <%= f.input :capacity %>
-  <%= f.input :rating %>
+  </div>
+  </div>
+  <%= f.input :description %>
+  <div class="row">
+  <%= f.input :rating, as: :radio_buttons, collection: [['Good', '1', { class: "one-star" }], ['Very good', '2', { class: "two-stars" }], ["Excellent", 3, { class:"three-stars" } ]] %>
+  </div>
   <%= f.input :price %>
   <%= f.submit %>
 <% end %>
+</div>

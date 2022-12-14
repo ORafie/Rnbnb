@@ -11,6 +11,22 @@
     <li class='list-group-item'>
       <%= link_to flat.title, flat_path(flat) %>
         <%= flat.rating %>
+        <fieldset class="form-group radio_buttons optional flat_rating">
+        <legend class="col-form-label pt-0">Rating</legend>
+        <input type="hidden" name="flat[rating]" value="">
+        <div class="form-check">
+        <input class="one-star" type="radio" value="1" name="flat[rating]" id="flat_rating_1">
+        <label class="form-check-label collection_radio_buttons" for="flat_rating_1">Good</label>
+        </div>
+        <div class="form-check">
+        <input class="two-stars" type="radio" value="2" name="flat[rating]" id="flat_rating_2">
+        <label class="form-check-label collection_radio_buttons" for="flat_rating_2">Very good</label>
+        </div>
+        <div class="form-check">
+        <input class="three-stars" type="radio" value="3" name="flat[rating]" id="flat_rating_3">
+        <label class="form-check-label collection_radio_buttons" for="flat_rating_3">Excellent</label>
+        </div>
+        </fieldset>
         <br>
       <%= flat.price %>
     </li>
