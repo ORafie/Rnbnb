@@ -1,11 +1,13 @@
-<h1><%= @flat.title %></h1>
-
-<ul>
-  <li><%= @flat.price %></li>
-  <li><%= @flat.flat_type %></li>
-  <li><%= @flat.description %></li>
-</ul>
-
-
-<%= link_to 'Back to all flats', flats_path, class: 'btn btn-primary' %>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" />
+  <div class="card-trip-infos">
+    <div>
+      <h3><%= @flat.title %></h3>
+      <p><%= @flat.description %></p>
+    </div>
+    <h2 class="card-trip-pricing">$<%= @flat.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+<%= link_to 'Back to all flats', flats_path, class: 'btn btn-primary m-3' %>
 <%= link_to 'Book this Flat', new_flat_booking_path(@flat), class: 'btn btn-primary' %>
+</div>
