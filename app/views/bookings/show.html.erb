@@ -1,1 +1,12 @@
-<h1>Your Bookings</h1>
+<div container class="card-trip">
+  <h1>Your (<%= current_user.email %>) Booking</h1>
+    <div class="card-trip-infos">
+      <%= @booking.flat.title %>
+      <br>
+       <h2 class="card-trip-pricing">$<%= @booking.flat.price %></h2>
+      <br>
+      <%= @booking.start_date %>
+      <%= @booking.end_date %>
+    </div>
+</div>
+<%= link_to 'Back to all flats', flats_path, class: 'btn btn-primary m-3' %>
