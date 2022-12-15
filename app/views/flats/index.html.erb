@@ -1,30 +1,42 @@
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-black">
-<h3 class="typed-js" data-controller="typed-js"></h3>
+<html>
+  <body style="background-color: white;">
+    <div class="cover mb-4 d-flex align-items-center justify-content-center">
+      <div class="text-center text-black">
+        <h3 class="typed-js" data-controller="typed-js"></h3>
+    </div>
   </div>
-</div>
 
-<div class='container' style='text-align: center;'>
-  <div class="row">
-    <% @flats.each do |flat| %>
-    <div class="col-4">
-      <div class="card" style="width: 18rem; margin-bottom: 15px;">
-        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to flat.title.capitalize, flat_path(flat) %></h5>
-          <h2 class="badge rounded-pill text-bg-light">$<%= flat.price %></h2>
-          <p class="card-text"><span class="badge rounded-pill text-bg-dark">Rating: <%= flat.rating %></span></p>
+  <div class='container' style='text-align: center;'>
+    <div class="row">
+      <% @flats.each do |flat| %>
+      <div class="col-4 d-flex">
+        <div class="card border-0 shadow-sm" style="margin-bottom: 15px; border-radius: 3%; background-color: #7DBBB8;">
+          <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title fw-bold"><%= link_to flat.title.capitalize, flat_path(flat) %></h3>
+              <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark">$<%= flat.price %></span></h5>
+              <h5 class="card-text"><span class="badge rounded-pill text-bg-dark">Rating: <%= flat.rating %></span></h5>
+            </div>
         </div>
       </div>
-     </div>
-
-    <% end %>
+      <% end %>
+    </div>
   </div>
-<%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-secondary' %>
 
+  <% if @flats.empty? %>
+    <h2>No flats found!</h2>
+  <% else %>
+    <div style="width: 100%; height: 600px; margin-top: 20px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <% end %>
 
-  <div style="width: 100%; height: 600px; margin-top: 20px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
+  <div class="shadow" style="width: 100%; height: 600px; border-radius: 3%; margin-top: 40px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+
+  </body>
+</html>

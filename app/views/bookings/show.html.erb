@@ -1,7 +1,12 @@
+
 <div class="container">
   <div class="card-trip">
   <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" />
-  <h1>Your (<%= current_user.email %>) booking: </h1>
+
+<html>
+  <body style="background-color: white;">
+  <div container class="card-trip">
+  <h1>Your (<%= current_user.email %>) Booking</h1>
     <div class="card-trip-infos">
       <form class="row g-3">
         <div class="col-md-9">
@@ -22,6 +27,8 @@
       </form>
     </div>
   </div>
-  <%= link_to 'Back to all flats', flats_path, class: 'btn btn-secondary m-3' %>
-  <%= link_to 'Show all my bookings', user_bookings_path(@flat), class: 'btn btn-secondary' %>
+  <%= link_to 'Back to all flats', flats_path, class: 'btn btn-primary m-3' %>
+  <%= link_to 'Show all my bookings', user_bookings_path(@flat), class: 'btn btn-primary m-3' %>
 </div>
+</body>
+</html>
