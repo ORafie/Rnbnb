@@ -1,6 +1,12 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      sql_query = "address ILIKE :query OR title ILIKE :query"
+      @flats = Flat.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
+
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
@@ -9,6 +15,9 @@ class FlatsController < ApplicationController
         image_url: helpers.asset_url("luggage.png")
       }
     end
+  end
+
+  def home
   end
 
   def new
