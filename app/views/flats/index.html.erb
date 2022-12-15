@@ -12,17 +12,16 @@
       <div class="col-4 d-flex">
         <div class="card border-0 shadow-sm" style="margin-bottom: 15px; border-radius: 3%; background-color: #7DBBB8;">
         <%= cl_image_tag flat.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill %>
+      
             <div class="card-body">
               <h3 class="card-title fw-bold"><%= link_to flat.title.capitalize, flat_path(flat) %></h3>
               <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark">$<%= flat.price %></span></h5>
-              <h5 class="card-text"><span class="badge rounded-pill text-bg-dark">Rating: <%= flat.rating %></span></h5>
+              <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark">Rating: <%= flat.rating %></span></h5>
             </div>
         </div>
       </div>
       <% end %>
     </div>
-  </div>
-
   <div class="container">
   <% if @flats.empty? %>
     <h2>No flats found!</h2>
@@ -33,6 +32,7 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
   <% end %>
+  </div>
   </div>
 
 
