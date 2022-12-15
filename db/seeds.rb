@@ -38,6 +38,36 @@ Flat.create!([{
   rating: 5.5,
   user_id: user.id,
   address: "Rue de Geneve 38, Lausanne"
+},
+{
+  flat_type: "roof-house",
+  title: "Cool Roof",
+  price: "150",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  capacity: 5,
+  rating: 9.5,
+  user_id: user.id,
+  address: "Berliner Strasse 17, Berlin"
+},
+{
+  flat_type: "tree",
+  title: "Innovative Tree Housing",
+  price: "101",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  capacity: 1,
+  rating: 1.5,
+  user_id: user.id,
+  address: "Bennelong Point, Sydney"
+},
+{
+  flat_type: "submarine",
+  title: "Yellow Submarine Room",
+  price: "110",
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  capacity: 20,
+  rating: 8.5,
+  user_id: user.id,
+  address: "Ocean Drive, Miami Beach"
 }])
 
 p "Created #{Flat.count} Flats"
