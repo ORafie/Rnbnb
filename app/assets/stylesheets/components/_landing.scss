@@ -11332,10 +11332,10 @@ html {
   font-size: 2rem;
 }
 .divider-custom.divider-light .divider-custom-line {
-  background-color: #fff;
+  background-color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
 }
 .divider-custom.divider-light .divider-custom-icon {
-  color: #fff;
+  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
 }
 
 .btn-xl {

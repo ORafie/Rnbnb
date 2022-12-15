@@ -44,6 +44,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :flat_type, :description, :price, :capacity, :address, :rating) #capacity replaces beds + rooms
+    params.require(:flat).permit(:title, :flat_type, :description, :price, :capacity, :address, :photo) #capacity replaces beds + rooms
   end
 end
