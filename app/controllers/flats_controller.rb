@@ -17,6 +17,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
+    @flat.user_id = current_user.id
     if @flat.save
       redirect_to @flat, notice: 'Flat was successfully created.'
     else
@@ -34,6 +35,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :flat_type, :description, :price, :capacity) #capacity replaces beds + rooms
+    params.require(:flat).permit(:title, :flat_type, :description, :price, :capacity, :address, :rating) #capacity replaces beds + rooms
   end
 end
