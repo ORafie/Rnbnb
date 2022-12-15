@@ -2,6 +2,16 @@
   justify-content: center;
 }
 
+.card-img-top {
+  border-top-right-radius: 3%;
+  border-top-left-radius: 3%;
+}
+
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: black;
 }

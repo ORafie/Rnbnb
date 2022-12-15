@@ -1,4 +1,6 @@
-<div container class="card-trip">
+<html>
+  <body style="background-color: white;">
+  <div container class="card-trip">
   <h1>Your (<%= current_user.email %>) Booking</h1>
     <div class="card-trip-infos">
       <%= @booking.flat.title %>
@@ -10,3 +12,5 @@
     </div>
 </div>
 <%= link_to 'Back to all flats', flats_path, class: 'btn btn-primary m-3' %>
+</body>
+</html>

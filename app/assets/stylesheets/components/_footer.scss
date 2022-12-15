@@ -1,14 +1,13 @@
-.footer_fixed {
-  background-position: bottom;
-  background-size: cover;
-  position: fixed;
+.footer {
+  background-color: #4A3C3B;
+  color: white;
+  position: bottom;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 120px;
   padding: 0px 50px;
-  color: rgba(0, 0, 0, 0.3);
-  margin-top: 0;
+  margin-top: 2;
 }
 
 .footer-links {
@@ -17,8 +16,7 @@
 }
 
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: white;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
