@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude,
         info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
-        image_url: helpers.asset_url("happy_travel_case.jpg")
+        image_url: helpers.asset_url("luggage.png")
       }
     end
   end
