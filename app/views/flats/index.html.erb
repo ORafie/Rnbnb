@@ -5,28 +5,26 @@
 </div>
 
 <div class='container' style='text-align: center;'>
-  <ul class='list-group'>
+  <div class="row">
     <% @flats.each do |flat| %>
-    <div class="d-flex">
-        <li class='card-body text-center list-group-item m-3 p-2' style="width: 18rem;">
+    <div class="col-4">
+      <div class="card" style="width: 18rem; margin-bottom: 15px;">
         <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" class="card-img-top" alt="...">
-          <h5 class='card-title m-2'><%= link_to flat.title.capitalize, flat_path(flat) %> $<%= flat.price %></h5>
-          <br>
-         <h5><span class="badge rounded-pill text-bg-dark">Rating: <%= flat.rating %></span></h5>
-        <% end %>
-        </li>
-    </div>
-  </ul>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to flat.title.capitalize, flat_path(flat) %></h5>
+          <h2 class="badge rounded-pill text-bg-light">$<%= flat.price %></h2>
+          <p class="card-text"><span class="badge rounded-pill text-bg-dark">Rating: <%= flat.rating %></span></p>
+        </div>
+      </div>
+     </div>
 
-  <div>
+    <% end %>
+  </div>
 <%= link_to 'Create a Flat', new_flat_path, class: 'btn btn-primary' %>
-</div>
 
 
-  <div style="width: 100%; height: 600px;"
+  <div style="width: 100%; height: 600px; margin-top: 20px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
 </div>
