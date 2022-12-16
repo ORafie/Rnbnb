@@ -15,7 +15,6 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
 
-    <%= link_to 'Show all Flats', flats_path, class: 'btn btn-primary d-flex' %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,6 +31,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Create a Flat", new_flat_path, class: "dropdown-item" %>
               <%= link_to "Bookings", user_bookings_path, class: "dropdown-item" %>
+              <%= link_to "Create a Flat", new_flat_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
