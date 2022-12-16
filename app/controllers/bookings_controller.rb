@@ -17,6 +17,20 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to user_bookings_path
+  end
+
+  def deny
+    @booking = Booking.find(params[:id])
+    @booking.status = "Denied"
+    @booking.save
+    redirect_to user_bookings_path
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @flat = Flat.find(params[:flat_id])
@@ -24,7 +38,7 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
 
     if @booking.save
-      redirect_to @booking, notice: 'Your booking was successfully created.'
+      redirect_to @booking
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +46,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'Your booking was successfully updated.'
+      redirect_to @booking
     else
       render :edit
     end
