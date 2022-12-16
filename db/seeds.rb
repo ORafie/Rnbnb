@@ -6,7 +6,7 @@ require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 Flat.destroy_all
-
+User.destroy_all
 user = User.create(email: 'asd@com.com', password: 'password')
 
 file = URI.open("https://cdn4.site-media.eu/images/1024/3443091/GorkiApartmentsPenthouse2010.jpg")
