@@ -12,7 +12,7 @@ class FlatsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude,
         info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
-        image_url: helpers.asset_url("luggage.png")
+        image_url: helpers.asset_url("briefcase.png")
       }
     end
   end
@@ -36,6 +36,11 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      image_url: helpers.asset_url("briefcase.png")
+    }]
   end
 
   # def search
