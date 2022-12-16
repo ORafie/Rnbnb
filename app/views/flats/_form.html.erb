@@ -7,10 +7,13 @@
     <div class="col-md-6">
       <%= f.input :price %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <%= f.input :flat_type %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-2">
+        <%= f.input :rating %>
+    </div>
+    <div class="col-md-5">
       <%= f.input :capacity %>
     </div>
     <div class="col-12">
@@ -20,13 +23,11 @@
       wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
       %>
     </div>
-    <div class="d-flex">
-        <%= f.input :rating, as: :radio_buttons, collection: [['Good', '1', { class: "one-star" }], ['Very good', '2', { class: "two-stars" }], ["Excellent", 3, { class:"three-stars" }]], label: false %>
-    </div>
     <%= f.input :photo, as: :file %>
   </form>
     <div class="d-grid gap-2 col-6 mx-auto">
         <%= f.button :submit, class: "btn btn-secondary" %>
+        <a class="btn btn-secondary" href="flats_path" role="button">Back to all flats</a>
     </div>
   <% end %>
 </div>
