@@ -8,7 +8,16 @@ Rails.application.routes.draw do
   resources :flats, only: [:new, :show, :create, :index] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:edit, :update, :show]
 
+  resources :bookings, only: [:edit, :update, :show] do
+    member do
+      get :accept, :deny
+    end
+  end
+
+  resources :users
   get '/user_bookings', to: 'bookings#user_bookings'
 end
+
+# route for bookings owner accept
+# controller edit
