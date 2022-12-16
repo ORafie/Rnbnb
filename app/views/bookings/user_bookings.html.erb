@@ -1,35 +1,29 @@
-<div class="container">
-  <% if @current_user.bookings_owner.empty? %>
-  <% else %>
-    <h1 class="form_header">Pending Bookings</h1>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60" />
-      <div class="card-trip-infos">
-        <div>
-          <% current_user.bookings_owner.each do |booking| %>
-            <div class="row g-3">
-              <div class="col-md-3">
-                <%= booking.flat.title %>
+<html>
+  <body style="background-color: white;">
+    <div class="container">
+      <h1 class="form_header">All your bookings:</h1>
+        <div class>
+          <div class="row">
+            <div class="d-flex flex-wrap justify-content-center">
+              <% current_user.bookings.each do |booking| %>
+              <div class="col-4 d-flex mx-5">
+                <div class="card border-0 shadow-sm" style="margin-bottom: 15px; border-radius: 3%; background-color: #7DBBB8;">
+                  <%= cl_image_tag booking.flat.photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill %>
+                  <div class="card-body">
+                    <h3 class="card-title fw-bold"><%= booking.flat.title %></h3>
+                    <div class="d-flex justify-content-evenly">
+                    <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark">$<%= booking.flat.price %></span></h5>
+                    <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark"><%= booking.start_date %></span></h5>
+                    <h5 class="card-text"><span class="badge rounded-pill bg-light text-dark"><%= booking.end_date %></span></h5>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-3">
-                <h2 class="card-trip-pricing">$<%= booking.flat.price %></h2>
-              </div>
-              <div class="col-md-3">
-                <%= booking.start_date %>
-              </div>
-              <div class="col-md-3">
-                <%= booking.end_date %>
-              </div>
-              <div class="col-md-3">
-                <h2><%= booking.status %></h2>
-                <br>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                <%= link_to 'Accept Flat', accept_booking_path(booking.id), class: 'btn btn-secondary' %>
-                <%= link_to 'Deny Flat', deny_booking_path(booking.id), class: 'btn btn-secondary' %>
-              </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <%= link_to 'Back to all flats', flats_path, class: 'btn btn-secondary' %>
+          </div>
       </div>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto">
